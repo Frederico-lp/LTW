@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <title>Mancala Game</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="styles/index.css">
+        <script src="index.js"></script> 
+    </head>
+
+    <body id="body">
+        <div class="header-container">
+            <h1>Mancala Game</h1>
+            <h3 id="informations"></h3>
+            <div class="log-reg-container" id="log-reg-container">
+                <div class="register-container" id="register-container">
+                    <button id="register-btn" onclick="showRegisterContainer()">Login/Register</button>
+                    <div id="register-popup" style="display: none">
+                        <form id="register-form" onsubmit="registerUser();return false">
+                            <label for="username">Username</label>
+                            <input id="username-register" type="text">
+                            <label for="password">Password</label>
+                            <input id="password-register" type="text">
+                            <input id="submit-btn-register" type="submit" value="Login/Register">
+                        </form>
+                    </div>
+                </div>
+                <div class="logged-as-container" id="logged-as-container" style="display: none">
+                    <p id="player-logged"><strong>You are logged in as:</strong> </p>
+                    <button id="find-game-btn" onclick="findGame()">Find Game</button>
+                    <button id="leave-game-btn" style="display: none" onclick="leave()">leave Game</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-container">
+            <div class="button-container">
+                <div class="rules-bttn"><button id="rules-bttn" onclick="showPopUpRules()">Show Rules</button></div>
+                <div class="config-bttn"><button id="config-bttn" onclick="showPopUpConfigs()">Show Configurations</button></div>
+                <div class="give-up-bttn"><button id="give-up" style="display: none" onclick="giveUp()">Give Up</button></div>
+                <div class="high-scores"><button id="view-highscores-btn" onclick="showPopUpHighScores()">View Highscores</button></div>
+            </div>
+
+            <!--
+            <div class="game-state-container">
+                
+                    AQUI LEVA AS MENSAGENS DE ESTADO DO JOGO
+                    Nesta área é apresentado um sumário do estado do jogo, com o número de sementes em cada um dos "armazens", as cavidades laterais de cada jogador.
+                
+            </div>
+            -->
+
+            <div class="rules-container" id="rulespopup" style="display:none">
+                <h2>Board and pieces</h2>
+                <ul id="unordered-board-and-pieces-list">
+                    <li>The board consists of:</li>
+                    <ul id="board-list">
+                        <li><strong>2</strong> main slots, one for each player, located on the sides of the <br>board - <strong>Warehouses</strong></li>
+                        <li><strong>6</strong> central slots on each side of the board, totaling <strong>12</strong> slots</li>
+                    </ul>
+                    <li>The pieces consists of small seeds (discs)</li>
+                    <ul id="pieces-list">
+                        <li><strong>4</strong> pieces starting on each central slot (total of <strong>48</strong> pieces)</li>
+                        <li><strong>Warehouses</strong> begin the game <strong>empty</strong> (no seeds on it)</li>
+                    </ul>
+                </ul>
+                <h2>Rules</h2>
+                <ul id="unodered-rules-list">
+                    <li>Each player controls the slots on their side, as well as the <strong>Warehouse</strong> on his <br>right side</li>
+                    <li>Each player plays alternately</li>
+                    <li>In their turn, the player can seed from one of his slots</li>
+                    <li>The game ends when a player has no seeds</li>
+                    
+                </ul>
+                <h2>How to seed</h2>
+                <ul id="unordered-how-to-play-list">
+                    <li>Pick a slot from your side</li>
+                    <li>Gather all <strong>N</strong> seeds from that slot</li>
+                    <li>Place <strong>1</strong> seed in the next <strong>N</strong> slots</li>
+                    <li>Seeding is done <strong>counterclockwise</strong></li>
+                </ul>
+                <h2>Keep seeding</h2>
+                <ul id="unordered-keep-seeding-list">
+                    <li>If the player reaches <strong>its Warehouse, seed it</strong></li>
+                    <li>If there are seeds left, <strong>keep on seeding on the opponent's side</strong></li>
+                    <li>If the player reaches the <strong>opponent Warehouse, don't seed it</strong></li>
+                    <li>If there are seeds left, <strong>keep on seeding on your side</strong></li>
+                </ul>
+                <h2>Last seed on warehouse</h2>
+                <ul id="unordered-last-seed-list">
+                    <li>Play again if the <strong>last seed</strong> was seeded on your own <strong>Warehouse</strong></li>
+                </ul>
+                <h2>Last empty</h2>
+                <ul id="unordered-last-empty-list">
+                    <li>If the <strong>last seed</strong> lands on one of <strong>your empty</strong> cavities, transfer to <strong>your Warehouse</strong><br>
+                    the seeds on the <strong>opposite cavity (opponent's)</strong> as well as the <strong>last</strong> seeded seed</li>
+                </ul>
+                <h2>Ending</h2>
+                <ul id="unordered-ending-list">
+                    <li>The game ends when:</li>
+                    <li>A player can't play because <strong>all of his cavities are empty</strong></li>
+                    <li>The other player gathers all it's <strong>own seeds</strong> and puts them in <strong>his Warehouse</strong></li>
+                    <li>Wins the player with <strong>most seeds in his Warehouse</strong></li>
+                </ul>
+            </div>
+            
+            <div class="config-container" id="configs-popup" style="display:none">
+                <form id="form-config" onsubmit="getFormData();return false">
+                    <label for="number-cavities">Number of cavities</label><br>
+                    <input id="number-cavities"  type="text" value="5" placeholder="Max: 10 / Min: 5"><br>
+                    <label for="number-seeds">Number of initial seeds</label><br>
+                    <input id="number-seeds" type="text" value="6" placeholder="Max: 20 / Min: 2"><br>
+                    <input id="player-on-player-online" type="radio" value="player" name="player-vs">
+                    <label for="player-on-player-online">Play VS Player (online)</label><br>
+                    <input id="player-on-player-local" type="radio" value="player" name="player-vs">
+                    <label for="player-on-player-local">Play VS Player (local)</label><br>
+                    <!--
+                    <input id="player-on-ai" type="radio" value="ai" name="player-vs">
+                    <label for="player-on-ai">Play VS Computer</label><br>
+                    -->
+                    <div id="reset-game">
+                    <label id="reset-game-label">Reset Game?</label><br>
+                    <label for="reset-game-yes">Yes</label>
+                    <input id="reset-game-yes" type="radio" name="reset-game"><br>
+                    <label for="reset-game-no">No</label>
+                    <input id="reset-game-no" type="radio" name="reset-game"><br>
+                    </div>
+                    <!--
+                    <div id="ai">
+                    <label for="ai-level">AI Level</label><br>
+                    <input id="ai-level" type="text" placeholder="Max: 5 / Min: 1"><br>
+                    </div>
+                    -->
+                    <button id="submit-bttn">Submit</button>
+                </form>
+            </div>
+
+            <div class="high-scores-container" id="high-scores-popup" style="display: none"></div>
+
+            <div id="board"></div>
+
+            <div class="messages-container" id="messages-container">
+                <h3>Game messages:</h3>
+                <div class="write-messages" id="write-messages">
+                    <!-- no js escrever aqui as mensagens do jogo -->
+                </div>
+            </div>
+        </div>
+
+        <!-- FOOTER IS COMPLETE - DO NOT CHANGE -->
+        <div class="footer">
+            <div class="animation-container">
+                <div class="d">D</div>
+                <div class="e">e</div>
+                <div class="v">v</div>
+                <div class="e1">e</div>
+                <div class="l">l</div>
+                <div class="o">o</div>
+                <div class="p">p</div>
+                <div class="e2">e</div>
+                <div class="d1">d</div>
+                
+                <div class="b">b</div>
+                <div class="y">y</div>
+                <div class="double-dot">:</div>
+    
+                <div class="f">F</div>
+                <div class="r">r</div>
+                <div class="e3">e</div>
+                <div class="d2">d</div>
+                <div class="e4">e</div>
+                <div class="r1">r</div>
+                <div class="i">i</div>
+                <div class="c">c</div>
+                <div class="o1">o</div>
+    
+                <div class="l1">L</div>
+                <div class="o2">o</div>
+                <div class="p1">p</div>
+                <div class="e5">e</div>
+                <div class="s">s</div>
+    
+                <div class="a">a</div>
+                <div class="n">n</div>
+                <div class="d3">d</div>
+    
+                <div class="p2">P</div>
+                <div class="e6">e</div>
+                <div class="d4">d</div>
+                <div class="r2">r</div>
+                <div class="o3">o</div>
+    
+                <div class="p3">P</div>
+                <div class="a2">a</div>
+                <div class="c1">c</div>
+                <div class="h">h</div>
+                <div class="e7">e</div>
+                <div class="c2">c</div>
+                <div class="o4">o</div>
+            </div>
+        </div>
+    </body>
+</html>

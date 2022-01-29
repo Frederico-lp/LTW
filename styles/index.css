@@ -1,0 +1,527 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
+#body {
+    background-color: #8b5a2b;
+    width: 97vw;
+}
+
+.header-container {
+    text-align: center;
+    width: 100%;
+    color: #cd8500;
+    font-family: 'Indie Flower', cursive;
+    font-size: x-large;
+}
+
+.log-reg-container {
+    position: absolute;
+    margin: 0px 0px 0px 300px;
+    z-index: 3;
+}
+
+.register-container {
+    position: absolute;
+    margin-left: 800px;
+    margin-top: -100px;
+    font-size: medium;
+}
+
+.register-container button {
+    width: 100px;
+    height: 25px;
+    border-radius: 5px;
+    border-style: solid;
+    background-color: #d4bb7e;
+    color: white;
+    cursor: pointer;
+}
+
+#register-popup {
+    width: 200px;
+    height: 150px;
+    background-color: #d4bb7e;
+    position: absolute;
+    margin-left: -50px;
+    margin-top: 20px;
+    z-index: 2;
+    border-radius: 15px;
+    color: white;
+}
+
+#register-form {
+    display: flex;
+    flex-direction: column;
+    font-size: 15px;
+    align-items: center;
+    margin-top: 15px;
+}
+
+#register-form input {
+    width: 150px;
+}
+
+#submit-btn-register {
+    margin-top: 15px;
+}
+
+.logged-as-container {
+    display: flex;
+    flex-direction: row;
+    margin-left: 700px;
+    margin-top: -90px;
+}
+
+.logged-as-container p {
+    padding-top: 7px;
+    font-size: 18px;
+    font-family: 'Indie Flower', cursive;
+}
+
+#find-game-btn {
+    width: 100px;
+    height: 25px;
+    border-radius: 5px;
+    border-style: solid;
+    background-color: #d4bb7e;
+    color: white;
+    cursor: pointer;
+    margin-top: -10px;
+    margin-left: 15px;
+    font-family: 'Indie Flower', cursive;
+}
+
+#leave-game-btn {
+    width: 75px;
+    height: 25px;
+    border-radius: 5px;
+    border-style: solid;
+    background-color: #d4bb7e;
+    color: white;
+    cursor: pointer;
+    margin-top: -10px;
+}
+
+.header-container p {
+    margin-top: -16px;
+}
+
+.button-container {
+    position: relative;
+    display: flex;
+    margin-top: 575px;
+    margin-left: 75px;
+    flex-direction: row;
+}
+
+.config-bttn button {
+    cursor: pointer;
+    width: 150px;
+    height: 50px;
+    margin: 0px 15px 0px 15px;
+    border-radius: 15px;
+    font-family: 'Indie Flower', cursive;
+    font-size: 15px;
+    border-style: solid;
+    background-color: #d4bb7e;
+    color: whitesmoke;
+}
+
+.rules-bttn button {
+    cursor: pointer;
+    width: 150px;
+    height: 50px;
+    margin: 0px 15px 0px 15px;
+    border-radius: 15px;
+    font-family: 'Indie Flower', cursive;
+    font-size: large;
+    border-style: solid;
+    background-color: #d4bb7e;
+    color: whitesmoke;
+}
+
+.give-up-bttn button {
+    cursor: pointer;
+    width: 150px;
+    height: 50px;
+    margin: 0px 15px 0px 15px;
+    border-radius: 15px;
+    font-family: 'Indie Flower', cursive;
+    font-size: large;
+    border-style: solid;
+    background-color: #d4bb7e;
+    color: whitesmoke;
+}
+
+.high-scores button {
+    cursor: pointer;
+    width: 150px;
+    height: 50px;
+    margin: 0px 15px 0px 15px;
+    border-radius: 15px;
+    font-family: 'Indie Flower', cursive;
+    font-size: large;
+    border-style: solid;
+    background-color: #d4bb7e;
+    color: whitesmoke;
+}
+
+.config-container {
+    font-size:x-large;
+    font-family: 'Indie Flower', cursive;
+    background-color: #8b6e2b;
+    color: #f2f2f2;
+    border-radius: 25px;
+    width: 90%;
+    height: 475px;
+    position: absolute;
+    z-index: 2;
+    margin-top: 25px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 15px;
+}
+
+input[type='radio'] { 
+    transform: scale(1.3); 
+}
+
+#number-cavities {
+    width: 200px;
+    height: 20px;
+    margin-bottom: 25px;
+}
+
+#number-seeds {
+    width: 200px;
+    height: 20px;
+    margin-bottom: 25px;
+}
+
+#player-on-player {
+    margin-bottom: 10px;
+}
+
+#player-on-ai {
+    margin-bottom: 10px;
+}
+
+#reset-game {
+    margin-top: 25px;
+}
+
+#reset-game-yes {
+    margin-top: 15px;
+}
+
+#reset-game-no {
+    margin-left: 12px;
+}
+
+#ai {
+    margin-top: 25px;
+}
+
+#ai-level {
+    width: 200px;
+    height: 20px;
+}
+
+#submit-bttn {
+    margin-top: 20px;
+    cursor: pointer;
+    width: 150px;
+    height: 50px;
+    border-radius: 15px;
+    font-family: 'Indie Flower', cursive;
+    font-size: large;
+    border-style: solid;
+    background-color: #d4bb7e;
+    color: whitesmoke;
+}
+
+.rules-container {
+    font-family: 'Indie Flower', cursive;
+    background-color: #8b6e2b;
+    color: #f2f2f2;
+    border-radius: 25px;
+    width: 90%;
+    height: 475px;
+    position: absolute;
+    z-index: 2;
+    margin-top: 25px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 15px;
+}
+
+.high-scores-container {
+    font-family: 'Indie Flower', cursive;
+    background-color: #8b6e2b;
+    color: #f2f2f2;
+    border-radius: 25px;
+    width: 90%;
+    height: 475px;
+    position: absolute;
+    z-index: 2;
+    margin-top: 25px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.high-scores-container h2 {
+    margin: 0px 0px 0px 10px;
+}
+
+#hs-tile {
+    width: 300px;
+    height: 175px;
+    border-radius: 25px;
+    background-color: #a0522d;
+    margin: 10px 10px 10px 10px;
+}
+
+#hs-tile h3 {
+    margin-left: 20px;
+    margin-top: 15px;
+}
+
+#hs-tile p {
+    margin-left: 20px;
+    margin-top: -5px;
+}
+
+.messages-container {
+    position: relative;
+    width: 350px;
+    height: 150px;
+    margin: 535px 0px 0px 150px;
+    border-radius: 25px;
+    background-color: #d4bb7e;
+    text-align: center;
+    color: white;
+    font-family: 'Indie Flower', cursive;;
+}
+
+.messages-container h3 {
+    margin-top: auto;
+}
+
+.write-messages {
+    text-align: start;
+    margin-left: 10px;
+    margin-top: -10px;
+    height: 100px;
+    width: 330px;
+    overflow-y: scroll;
+}
+
+.write-messages p {
+    margin: 5px 0px 5px 10px;
+}
+
+.main-container {
+    display: flex;
+    margin-top: 30px;
+    justify-content: center;
+}
+
+#player-one {
+    position: absolute;
+    margin-top: 420px;
+    margin-left: 475px;
+    font-family: 'Indie Flower', cursive;
+}
+
+#player-two {
+    position: absolute;
+    margin-left: 475px;
+    margin-top: 55px;
+    font-family: 'Indie Flower', cursive;
+}
+
+#board {
+    border-radius: 25px;
+    width: 90%;
+    margin-top: 25px;
+    justify-content: space-between;
+    background-image: url(textures/wood-texture.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    display: flex;
+    height: 500px;
+    position: absolute;
+}
+
+#warehouse1 {
+    margin: auto;
+    height: 250px;
+    width: 100px;
+    background-image: url(textures/dark-wood-texture.jpg);
+    border-radius: 20px;
+    position: relative;
+}
+
+#warehouse2 {
+    margin: auto;
+    height: 250px;
+    width: 100px;
+    background-image: url(textures/dark-wood-texture.jpg);
+    border-radius: 20px;
+    position: relative;
+}
+
+.hidden-item {
+    margin: auto;
+    flex-grow: 1;
+}
+
+.line {
+    display: flex;
+    height: 125px;
+}
+
+.small-item {
+    margin: 13px;
+    background-image: url(textures/dark-wood-texture.jpg);
+    flex-grow: 2;
+    border-radius: 20px;
+    padding: 15px;
+    position: relative;
+}
+
+.seed {
+    background: radial-gradient(brown, black);
+    height: 20px;
+    width: 10px;
+    border-radius: 70%;
+    float: left;
+    position: absolute;
+}
+
+.rules-container h2 {
+    margin-top: -5px;
+}
+
+#unordered-board-and-pieces-list {
+    margin-top: -12px;
+}
+
+#unodered-rules-list {
+    margin-top: -12px;
+}
+
+#unordered-how-to-play-list {
+    margin-top: -12px;
+}
+
+#unordered-keep-seeding-list {
+    margin-top: -12px;
+}
+
+#unordered-last-seed-list {
+    margin-top: -12px;
+}
+
+#unordered-last-empty-list {
+    margin-top: -12px;
+}
+
+#unordered-ending-list {
+    margin-top: -12px;
+}
+
+/*DO NOT CHANGE FROM THIS LINE DOWN*/
+
+.footer {
+    position: absolute;
+    width: 95%;
+    color: white;
+    font-family: 'Indie Flower', cursive;
+    margin-top: 50px;
+    padding-bottom: 15px;
+    text-align: center;
+}
+
+.animation-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+@keyframes bounce {
+    0%   { transform: scale(1,1) translateY(0); }
+    25%  { transform: scale(.9,1.1)   translateY(-15px);}
+    50%  { transform: scale(1.05,.95) translateY(0); }
+    75% { transform: scale(.9,1.1) translateY(-7px);}
+    100% { transform: scale(1,1) translateY(0);}
+}
+
+.d {animation: bounce 2s ease infinite;}
+.e {animation: bounce 2s ease infinite .1s;}
+.v {animation: bounce 2s ease infinite .2s;}
+.e1 {animation: bounce 2s ease infinite .3s;}
+.l {animation: bounce 2s ease infinite .4s;}
+.o {animation: bounce 2s ease infinite .5s;}
+.p {animation: bounce 2s ease infinite .6s;}
+.e2 {animation: bounce 2s ease infinite .7s;}
+.d1 {
+    animation: bounce 2s ease infinite .8s;
+    margin-right: 8px;
+}
+
+.b {animation: bounce 2s ease infinite .9s;}
+.y {animation: bounce 2s ease infinite 1s;}
+.double-dot {
+    animation: bounce 2s ease infinite 1.1s;
+    margin-right: 8px;
+}
+
+.f {animation: bounce 2s ease infinite 1.2s;}
+.r {animation: bounce 2s ease infinite 1.3s;}
+.e3 {animation: bounce 2s ease infinite 1.4s;}
+.d2 {animation: bounce 2s ease infinite 1.5s;}
+.e4 {animation: bounce 2s ease infinite 1.6s;}
+.r1 {animation: bounce 2s ease infinite 1.7s;}
+.i {animation: bounce 2s ease infinite 1.8s;}
+.c {animation: bounce 2s ease infinite 1.9s;}
+.o1 {
+    animation: bounce 2s ease infinite 2s;
+    margin-right: 8px;
+}
+
+.l1 {animation: bounce 2s ease infinite 2.1s;}
+.o2 {animation: bounce 2s ease infinite 2.2s;}
+.p1 {animation: bounce 2s ease infinite 2.3s;}
+.e5 {animation: bounce 2s ease infinite 2.4s;}
+.s {
+    animation: bounce 2s ease infinite 2.5s;
+    margin-right: 8px;
+}
+
+.a {animation: bounce 2s ease infinite 2.6s;}
+.n {animation: bounce 2s ease infinite 2.7s;}
+.d3 {
+    animation: bounce 2s ease infinite 2.8s;
+    margin-right: 8px;
+}
+
+.p2 {animation: bounce 2s ease infinite 2.9s;}
+.e6 {animation: bounce 2s ease infinite 3s;}
+.d4 {animation: bounce 2s ease infinite 3.1s;}
+.r2 {animation: bounce 2s ease infinite 3.2s;}
+.o3 {
+    animation: bounce 2s ease infinite 3.3s;
+    margin-right: 8px;
+}
+
+.p3 {animation: bounce 2s ease infinite 3.4s;}
+.a2 {animation: bounce 2s ease infinite 3.5s;}
+.c1 {animation: bounce 2s ease infinite 3.6s;}
+.h {animation: bounce 2s ease infinite 3.7s;}
+.e7 {animation: bounce 2s ease infinite 3.8s;}
+.c2 {animation: bounce 2s ease infinite 3.9s;}
+.o4 {animation: bounce 2s ease infinite 4s;}
